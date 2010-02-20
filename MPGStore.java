@@ -39,26 +39,4 @@ public class MPGStore implements Serializable
 	{
 		return store.size();
 	}
-
-	/**
-	 * Currently always false until implemented
-	 * @return boolean
-	 */
-	public boolean save()
-	{
-		//Nothing yet
-
-		return false;
-	}
-
-	/**
-	 * Currently always false until implemented
-	 * @return boolean
-	 */
-	public boolean load()
-	{
-		//Nothing yet
-		
-		return false;
-	}
 }

@@ -1,2 +1,6 @@
 This is the public version of the MPG Calculator in java.
 Please don't break it too much.
+
+NOTE: This version uses UK measurements.
+Trying it with US equivilents may cause incorrect values.
+If you need a US version, create a branch and hack as necessary or request it as a new feature.
