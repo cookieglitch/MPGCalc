@@ -9,8 +9,17 @@ import java.io.*;
 
 public class MPGCalc
 {
+	private boolean debug = false;
+	
 	public static void main(String args[])
 	{
+		boolean running = true;
+
+		if(args[0].equals("DEBUG"))
+		{
+			debug = true;
+		}
+		
 		System.out.println("MPG Calculator\nJohn Tiernan & co\n19-2-2010");
 		System.out.println("Initialising...\n\tWARNING: This is the command line version."
 							+ "\n\tFor the GUI version see the website.");
@@ -19,20 +28,28 @@ public class MPGCalc
 		
 		//Create Store
 		MPGStore s = new MPGStore();
-
-		//Create sample entry
-		String d = "Today";
-		double m = 100;
-		double f = 30;
-		MPGEntry e = new MPGEntry("now", 100, 300);
 		
-		//Add sample to store
-		s.addEntry(e);
-
-		//Output sample
-		MPGEntry sample = s.getEntry(0);
-		System.out.println("Sample: " + sample.getDate() + "-" + sample.getMiles());
+		if(debug)
+		{
+			//Create sample entry
+			String d = "Today";
+			double m = 100;
+			double f = 30;
+			MPGEntry e = new MPGEntry("now", 100, 300);
 		
+			//Add sample to store
+			s.addEntry(e);
+
+			//Output sample
+			MPGEntry sample = s.getEntry(0);
+			System.out.println("Sample: " + sample.getDate() + "-" + sample.getMiles());
+		}
+		
+		while(running)
+		{
+			String command = getUserInput();
+			
+		}
 	}
 
 	/**
@@ -125,7 +142,9 @@ public class MPGCalc
 		commands[5] = "quit";
 		
 		boolean found = false;
-
+		
+		
+		
 		for(int i = 0; i < commands.length; i++)
 		{
 			if(commands[i].equals(c))
